@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ForumApp.Helpers\ForumApp.Helpers.csproj" />
+    <ProjectReference Include="..\ForumApp.Services\ForumApp.Services.csproj" />
     <ProjectReference Include="..\ForumApp.Shared\ForumApp.Shared.csproj" />
   </ItemGroup>
 

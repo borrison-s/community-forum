@@ -20,5 +20,17 @@ namespace ForumApp.Mappers.Users
                 UpdatedAt = DateTime.Now
             };
         }
+
+        public static UserDto ToUserDto(this User user)
+        {
+            return new UserDto
+            {
+                UserName = user.UserName,
+                Name = user.Name,
+                Role = user.Role
+            };
+        }
+
+
     }
 }

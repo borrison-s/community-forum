@@ -22,6 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ForumApp.DataAccess\ForumApp.DataAccess.csproj" />
     <ProjectReference Include="..\ForumApp.Dtos\ForumApp.Dtos.csproj" />
+    <ProjectReference Include="..\ForumApp.Mappers\ForumApp.Mappers.csproj" />
     <ProjectReference Include="..\ForumApp.Shared\ForumApp.Shared.csproj" />
   </ItemGroup>
 
