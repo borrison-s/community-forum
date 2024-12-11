@@ -19,4 +19,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ForumApp.Domain\ForumApp.Domain.csproj" />
+    <ProjectReference Include="..\ForumApp.Dtos\ForumApp.Dtos.csproj" />
+  </ItemGroup>
+
 </Project>
