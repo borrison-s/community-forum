@@ -19,4 +19,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ForumApp.DataAccess\ForumApp.DataAccess.csproj" />
+    <ProjectReference Include="..\ForumApp.Services\ForumApp.Services.csproj" />
+  </ItemGroup>
+
 </Project>
