@@ -3,6 +3,7 @@ using ForumApp.DataAccess.Implementations;
 using ForumApp.DataAccess.Interfaces;
 using ForumApp.Services.Implementations;
 using ForumApp.Services.Interfaces;
+using ForumApp.Shared.TokenHelpers.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -18,6 +19,7 @@ namespace ForumApp.Helpers
         public static void InjectServices(IServiceCollection services)
         {
             services.AddTransient<IUserService, UserService>();
+            services.AddScoped<IJwtHelper, IJwtHelper>();
         }
 
         public static void InjectRepositories(IServiceCollection services)
