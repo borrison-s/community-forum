@@ -10,7 +10,6 @@ using ForumApp.Mappers.Users;
 using ForumApp.Services.Interfaces;
 using ForumApp.Shared;
 using ForumApp.Shared.Shared;
-using ForumApp.Shared.TokenHelpers.Interfaces;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
@@ -21,7 +20,6 @@ namespace ForumApp.Services.Implementations
         private readonly IUserRepository _userRepository;
         //we retrieve the AppSettings section from appSettings.json file
         private readonly IOptions<AppSettings> _options;
-        private readonly IJwtHelper _jwtHelper;
 
         public UserService(IUserRepository userRepository, IOptions<AppSettings> options)
         {
