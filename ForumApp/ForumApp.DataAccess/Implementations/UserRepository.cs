@@ -52,10 +52,13 @@ namespace ForumApp.DataAccess.Implementations
             return _context.Users.FirstOrDefault(x => x.UserName == username);
         }
 
-        public User GetUserByUsernameAndPassword(string username)
+        public User GetUserByUsernameAndPassword(string username, string password)
         {
-            throw new NotImplementedException();
+            return _context.Users.FirstOrDefault(x => x.UserName.ToLower() == username.ToLower()
+                                                                && x.Password == password);
+
         }
+        
 
 
 
