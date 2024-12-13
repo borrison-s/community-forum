@@ -100,28 +100,6 @@ namespace ForumApp.Services.Implementations
             return resultToken;
         }
 
-        public LoginResponseDto Login(LoginUserDto loginUserDto)
-        {
-            // Fetch user by username
-            var user = _userRepository.GetUserByUsername(loginUserDto.UserName);
-
-            // Validate user and password
-            if (user == null || user.Password != loginUserDto.Password) // Replace with hashed password comparison
-                throw new ValidationException("Invalid username or password.");
-
-            // Generate JWT
-            var token = _jwtHelper.GenerateToken(user);
-
-            // Return response
-            return new LoginResponseDto
-            {
-                Token = token,
-                UserName = user.UserName,
-                Role = user.Role
-            };
-        }
-
-
         private static string GenerateHash(string password)
         {
             //MD5 has algorithm

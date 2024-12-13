@@ -19,7 +19,6 @@ namespace ForumApp.Helpers
         public static void InjectServices(IServiceCollection services)
         {
             services.AddTransient<IUserService, UserService>();
-            services.AddScoped<IJwtHelper, IJwtHelper>();
         }
 
         public static void InjectRepositories(IServiceCollection services)

@@ -6,6 +6,5 @@ namespace ForumApp.Services.Interfaces
     {
         void RegisterUser(RegisterUserDto dto);
         string LoginUser(LoginUserDto loginUserDto);
-        LoginResponseDto Login(LoginUserDto loginUserDto);
     }
 }
