@@ -22,8 +22,15 @@ namespace ForumApp.Controllers
         [HttpGet]
         public ActionResult<List<UserDto>> GetAllUsers()
         {
-            var users = _userService.GetAllUsers();
-            return Ok(users);
+            try
+            {
+                var users = _userService.GetAllUsers();
+                return Ok(users);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred, contact the admin!");
+            }
         }
     }
 }
