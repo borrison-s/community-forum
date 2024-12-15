@@ -98,6 +98,13 @@ namespace ForumApp.Services.Implementations
             return resultToken;
         }
 
+        public List<UserDto> GetAllUsers()
+        {
+            var usersDb = _userRepository.GetAll();
+            var users = usersDb.Select(x => x.ToUserDto());
+            return users.ToList();
+        }
+
         private static string GenerateHash(string password)
         {
             //MD5 has algorithm
