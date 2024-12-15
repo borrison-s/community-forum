@@ -3,6 +3,7 @@ using ForumApp.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace ForumApp.Controllers
 {
@@ -20,17 +21,28 @@ namespace ForumApp.Controllers
 
 
         [HttpGet]
-        public ActionResult<List<UserDto>> GetAllUsers()
+        public ActionResult<List<UserDto>> GetAll()
         {
             try
             {
-                var users = _userService.GetAllUsers();
-                return Ok(users);
+                //var identity = HttpContext.User.Identity as ClaimsIdentity;
+                //var claims = identity.Claims;
+
+                //if(identity.FindFirst("userRole").Value != "Admin")
+                //{
+                //    return StatusCode(StatusCodes.Status403Forbidden);
+                //}
+
+                //throw new Exception("Our error");
+
+                return Ok(_userService.GetAllUsers());
             }
             catch (Exception e)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred, contact the admin!");
+
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred");
             }
         }
+
     }
 }
